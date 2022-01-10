@@ -2,34 +2,33 @@ import Button from "./Button";
 import styles from "./App.module.css";
 import { useState, useEffect } from "react";
 
-function App() {
-  const [counter, setCounter] = useState(0);
-  const onClick = () => {
-    setCounter((prev) => prev+ 1 );
+function Hello(params) {
+  // useEffect(()=>{
+  //   console.log("i am here");
+  //   return () =>(console.log("bye"));
+  // }, []);
+  function byFn(params) {
+    console.log("bye")
   }
-  const onlyOnce = () => {
-    console.log("onlly once");
+  function helloFn(params) {
+    console.log("i am here");
+    return byFn;
   }
-  const [key, setKey] = useState("");
-  console.log("everytime")
-  useEffect(onlyOnce, []);
+  useEffect(helloFn, [])
+  return(
+    <h1>Hello!</h1>
+  );
+}
 
-  const onChange = (event) => {
-    setKey(event.target.value);
-  }
-  useEffect(()=> {
-    if (key !=="" && key.length >= 6) {
-      console.log("search", key);
-    }
-  }, [key]);
-  return (
+function App() {
+  const [showing, setShowing] = useState(false);
+  const onClick = () => {setShowing(prev => !prev)}
+  console.log("choice");
+  return(
     <div>
-      <h1 className={styles.title}>welcome back!</h1>
-      <input onChange={onChange} value={key} type="text" placeholder="Search here"/>
-      <h1 className={styles.title}>{counter}</h1>
-      <button onClick={onClick}>countit</button>
-      <Button text="hello"/>
-    </div>
+      {showing? <Hello />: null}
+      <button onClick={onClick}>{showing? "Hide": "Show"}</button>
+    </div> 
   );
 }
 
