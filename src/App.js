@@ -1,20 +1,20 @@
 import {
-  BrowserRouter as Router,
-  Switch,
+  BrowserRouter,
+  Routes,
   Route,
-  Link
 } from "react-router-dom";
 import Home from "./routes/Home";
+import Detail from "./routes/Detail";
+
 
 function App() {
   return(
-    <Router>
-      <Switch>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
-    </Router>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/movie" element={<Detail/>}></Route>
+        <Route path="/" element={<Home/>}></Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
