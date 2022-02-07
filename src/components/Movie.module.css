@@ -1,0 +1,13 @@
+.movie__col {
+  background-color: yellow;
+  cursor: pointer;
+}
+.movie__genres {
+  display: flex;
+  list-style: circle;
+  padding: 0;
+}
+
+.movie__genres li {
+  margin: 0 20px;
+}

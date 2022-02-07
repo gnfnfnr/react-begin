@@ -1,0 +1,7 @@
+.moive__lists {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: minmax(800px, auto);
+  grid-gap: 10px;
+  margin: 0 50px;
+}
