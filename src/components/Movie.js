@@ -10,22 +10,23 @@ function Movie({id, title, summary, medium_cover_image, runtime,year ,genres}) {
     const onClick= () => setRevert(!revert);
     return (
         <div className={styles.movie__col} onClick={onClick}>
+            <img src={medium_cover_image}/>
             {revert?
-                <p>{summary.length > 235 ? `${summary.slice(0, 232)}...` : summary}</p>: 
-                    <div> 
-                        <h2>
-                            <Link to={`/movie/${id}`}>
-                            {title}
-                            </Link>
-                        </h2>
+                <div className={styles.movie__check}>You've already seen the movie!</div>: 
+                    <div className={styles.movie__info}> 
                         <div>
-                            <span>{`상영시간: ${runtime}분`}</span>
-                            <span>{`${year}년`}</span>
+                            <h2>
+                                <Link to={`/movie/${id}`}>
+                                {title}
+                                </Link>
+                            </h2>
+                                <span>{`상영시간: ${runtime}분`}</span>
+                                <span>{`${year}년`}</span>
+                            <ul className={styles.movie__genres}>
+                            {genres.map((g)=><li key={g}>{g}</li>)}
+                            </ul>
                         </div>
-                        <ul className={styles.movie__genres}>
-                          {genres.map((g)=><li key={g}>{g}</li>)}
-                        </ul>
-                        <img src={medium_cover_image}/>
+                        <p className={styles.movie__sum}>{summary.length > 235 ? `${summary.slice(0, 232)}...` : summary}</p>
                     </div>
             }
         </div>

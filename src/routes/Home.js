@@ -17,7 +17,7 @@ function App() {
     getMovies();
   }, []);
   return(
-    <div>{loading? <h1>Loading</h1>:(
+    <div className={styles.movies}>{loading? <h1>Loading</h1>:(
         <div className={styles.moive__lists}>
           {movies.map((movie)=> 
             <Movie 
