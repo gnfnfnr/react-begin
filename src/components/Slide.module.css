@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  background-color: #aaadc38c;
+}
+
+.movies {
+  padding-top: 55px;
+}
+
+.moive__show {
+  overflow: hidden;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.moive__lists {
+  display: flex;
+}

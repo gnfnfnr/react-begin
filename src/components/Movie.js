@@ -15,9 +15,9 @@ function Movie({id, title, summary, medium_cover_image, runtime,year ,genres}) {
                 <div className={styles.movie__check}>You've already seen the movie!</div>: 
                     <div className={styles.movie__info}> 
                         <div>
-                            <h2>
+                            <h2 className={styles.movie__title}>
                                 <Link to={`/movie/${id}`}>
-                                {title}
+                                {title.length> 20 ? `${title.slice(0, 20)}...`: title}
                                 </Link>
                             </h2>
                                 <span>{`상영시간: ${runtime}분`}</span>
@@ -26,7 +26,7 @@ function Movie({id, title, summary, medium_cover_image, runtime,year ,genres}) {
                             {genres.map((g)=><li key={g}>{g}</li>)}
                             </ul>
                         </div>
-                        <p className={styles.movie__sum}>{summary.length > 235 ? `${summary.slice(0, 232)}...` : summary}</p>
+                        {/* <p className={styles.movie__sum}>{summary.length > 235 ? `${summary.slice(0, 232)}...` : summary}</p> */}
                     </div>
             }
         </div>
