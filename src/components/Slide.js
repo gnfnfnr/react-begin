@@ -4,26 +4,38 @@ import styles from "./Slide.module.css";
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faCircleChevronRight, faCircleChevronLeft } from '@fortawesome/free-solid-svg-icons'
-function Slide({genre}) {
+function Slide({api}) {
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
-  // const [trans, setTrans]
+  const [trans, setTrans] = useState(0);
+  const onClickR = () => {
+    if (trans<=-5280) {
+      return;
+    }
+    setTrans(current => current - 1320);
+  };
+  const onClickL = () => {
+    if (trans>=0) {
+      return;
+    }
+    setTrans(current => current + 1320);
+  };
   const getMovies = async() => {
     const response = await fetch(
-      `https://yts.mx/api/v2/list_movies.json?minimum_rating=8.8&genre=${genre}`
+      api
       );
       const json = await response.json();
-      setMovies(json.data.movies)
-      setLoading(false)
+      setMovies(json.data.movies);
+      setLoading(false);
   };
   useEffect(() => {
     getMovies();
   }, []);
   return(
-    <div className={styles.movies}>{loading? <h1>Loading</h1>:(
-      <div>
+    <div className={styles.slide__movies}>{loading? <h1>Loading</h1>:(
+      <div className={styles.moive__box}>
         <div className={styles.moive__show}>
-          <div className={styles.moive__lists}>
+          <div className={styles.moive__lists} style={{transform: `translateX(${trans}px)`}}>
           {movies.map((movie)=> 
             <Movie 
               key={movie.id}
@@ -38,13 +50,13 @@ function Slide({genre}) {
           )}
           </div>
         </div>
-        <div className="arrow-button">
-          <div className="arrow-left">
+        <div className={styles.arrow__button}>
+          <button className={trans? styles.arrow__left:styles.hidden} onClick={onClickL}>
             <FontAwesomeIcon icon={faCircleChevronLeft} size="2x"/>
-          </div>
-          <div className="arrow-right">
+          </button>
+          <button className={trans===-5280? styles.hidden:styles.arrow__right} onClick={onClickR}>
             <FontAwesomeIcon icon={faCircleChevronRight} size="2x"/>
-          </div>
+          </button>
         </div>
       </div>
         
