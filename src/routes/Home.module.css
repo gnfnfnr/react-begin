@@ -1,3 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap");
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  background-image: linear-gradient(
+    0.48turn,
+    #def5ff,
+    #dff5e2,
+    #e1f2bb,
+    #008c7e,
+    #025e73,
+    #03a6a6,
+    #d7ebae,
+    #96b89c
+  );
+}
+
+.slide__container {
+  margin-top: 150px;
+}
+
 .slide__box {
   padding-bottom: 20px;
 }

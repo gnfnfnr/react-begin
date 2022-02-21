@@ -1,11 +1,9 @@
 import Slide from "../components/Slide";
 import navList from "../atom/navList";
 import styles from "./Home.module.css";
-import Nav from "../components/Nav";
 function App() {
   return(
-    <div>
-      <Nav />
+    <div className={styles.slide__container}>
       <section>
       {navList.map(list => {
         return(
