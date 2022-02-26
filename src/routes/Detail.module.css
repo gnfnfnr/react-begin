@@ -1,0 +1,46 @@
+.movie__box {
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 150px;
+  color: white;
+}
+
+.preview__bgImg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  filter: brightness(50%);
+  z-index: -1;
+}
+
+.preview__download {
+  background: #ece6cc;
+  padding: 20px;
+  text-align: center;
+  margin: 20px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+}
+
+.preview__download:hover {
+  color: red;
+}
+
+.preview__sum {
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.preview__good {
+  font-size: 40px;
+}
+
+.preview__good:hover {
+  color: rgb(255, 221, 99);
+}

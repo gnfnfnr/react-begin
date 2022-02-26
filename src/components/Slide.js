@@ -42,7 +42,6 @@ function Slide({api}) {
               id={movie.id}
               medium_cover_image={movie.medium_cover_image} 
               title={movie.title} 
-              summary={movie.summary}
               runtime={movie.runtime}
               year={movie.year}
               genres={movie.genres}

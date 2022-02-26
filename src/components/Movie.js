@@ -7,7 +7,7 @@ import styles from "./Movie.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckDouble  } from '@fortawesome/free-solid-svg-icons'
 
-function Movie({id, title, summary, medium_cover_image, runtime,year ,genres}) {
+function Movie({id, title, medium_cover_image, runtime,year ,genres}) {
     const [revert, setRevert] = useState(false);
     const onClick= () => setRevert(!revert);
     return (
@@ -30,7 +30,6 @@ function Movie({id, title, summary, medium_cover_image, runtime,year ,genres}) {
                         <FontAwesomeIcon icon={faCheckDouble} size='2x'/><br/>
                         You've already seen the movie!
                     </div>
-                        {/* <p className={styles.movie__sum}>{summary.length > 235 ? `${summary.slice(0, 232)}...` : summary}</p> */}
                 </div>
         </div>
     )
@@ -38,7 +37,6 @@ function Movie({id, title, summary, medium_cover_image, runtime,year ,genres}) {
 
 Movie.propTypes = {
     title: PropTypes.string.isRequired,
-    summary: PropTypes.string.isRequired,
     genres: PropTypes.arrayOf(PropTypes.string).isRequired,
     medium_cover_image: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,

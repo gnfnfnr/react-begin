@@ -6,7 +6,6 @@ import {
 import Home from "./routes/Home";
 import Detail from "./routes/Detail";
 import Nav from './components/Nav';
-
 function App() {
   return(
     <BrowserRouter>
