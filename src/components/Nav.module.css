@@ -18,3 +18,7 @@
 .nav__list:nth-child(n + 2) {
   margin-left: 15px;
 }
+
+.nav__list a {
+  color: black;
+}

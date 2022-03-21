@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useEffect } from "react/cjs/react.development";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faThumbsUp, faDownload} from '@fortawesome/free-solid-svg-icons';
+import { faStar, faThumbsUp} from '@fortawesome/free-solid-svg-icons';
 import styles from './Detail.module.css';
 
 function Detail() {
